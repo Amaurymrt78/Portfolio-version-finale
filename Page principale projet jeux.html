@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Acceuil Site de Pari Sportif "BetEquus" </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            transition: background-color 0.5s;
+        }
+
+        .dark-mode {
+            background-color: #222;
+            color: #fff;
+        }
+
+        .dark-mode .btn-primary {
+            background-color: #343a40;
+            border-color: #343a40;
+        }
+
+        .dark-mode .btn-primary:hover {
+            background-color: #292e33;
+            border-color: #292e33;
+        }
+
+        .dark-mode .table {
+            color: #fff;
+        }
+
+        .dark-mode .thead-dark th {
+            background-color: #343a40;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="row mb-4">
+            <div class="col">
+                <a href="index HTML page d'acceuil.html" class="btn btn-primary">Accueil</a>
+            </div>            
+            <div class="col text-center">
+                <h1> BeteEquus </h1>
+            </div>
+            <div class="col text-right">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Menu déroulant Mon Compte</title>
+                    <a href="page profil.html" class="btn btn-primary">Profil</a>
+                    <style>
+                        
+                        .account-container {
+                            display: flex;
+                            align-items: center;
+                        }
+                
+                        .account-button {
+                            display: flex;
+                            align-items: center;
+                            
+                        }
+                        .account-dropdown {
+                            display: flex;
+                            align-items: center;
+                        }
+                    </style>
+                    <script>
+                        function handleDropdownSelection() {
+                            
+                            var selectedOption = document.getElementById("account-dropdown").value;
+                
+                            
+                            if (selectedOption === "profil") {
+                                
+                                window.location.href = "lien-vers-profil";
+                            } else if (selectedOption === "solde") {
+                                
+                                alert("Afficher le solde");
+                            } else if (selectedOption === "deconnexion") {
+                                
+                                alert("Déconnexion");
+                            }
+                        }
+                    </script>
+                </head>
+            </div>
+        </div>
+
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Équipe</th>
+                    <th>Mise (argent imaginaire)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Équipe 1</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>Équipe 2</td>
+                    <td>20</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <form action="traitement_pari.php" method="post">
+            <label for="equipe">Choisissez une équipe :</label>
+            <select class="form-control" name="equipe" id="equipe">
+                <option value="equipe1">Équipe 1</option>
+                <option value="equipe2">Équipe 2</option>
+            </select>
+            <br>
+
+            <label for="mise">Mise (argent imaginaire) :</label>
+            <input class="form-control" type="number" name="mise" id="mise" min="1" required>
+            <br>
+
+            <button class="btn btn-primary" type="submit">Parier</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById("myDropdown");
+            dropdown.classList.toggle("show");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.btn-primary')) {
+                var dropdowns = document.getElementsByClassName("dropdown-menu");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+
+</body>
+</html>
